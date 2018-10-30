@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Img Color Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="overlay"></div>
+    <button>Click to change color</button>
+</body>
+<script>
+    const btn = document.querySelector("button");
+    const imgColor = document.querySelector(".overlay");
+
+    const randomizeColor = () => {
+        let randColor = `#${Math.random().toString(16).substr(-6)}`;
+        imgColor.style.backgroundColor = `${randColor}`;
+        btn.style.color = `${randColor}`;
+    }
+
+    btn.addEventListener("click", randomizeColor);
+</script>
+
+</html>
